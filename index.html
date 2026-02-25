@@ -89,14 +89,12 @@ let str = "[{()}]"
 let stack = []
 
 for(let i=0; i&lt;str.length; i++){
-
     let ch = str[i]
 
     if(ch == "[" || ch == "{" || ch == "("){
         stack.push(ch)
     }
     else{
-
         let last = stack.pop()
 
         if(
@@ -107,9 +105,7 @@ for(let i=0; i&lt;str.length; i++){
             console.log("Invalid")
             return
         }
-
     }
-
 }
 
 if(stack.length == 0)
