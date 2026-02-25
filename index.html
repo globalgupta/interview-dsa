@@ -2,33 +2,45 @@
 <html>
 <head>
 
-<title>DSA Questions</title>
+<title>My Interview Questions</title>
 
 <style>
 
 body{
 font-family: Arial;
-background:white;
-color:black;
-padding:20px;
+background:#f0f2f5;
+padding:40px;
 }
 
 .container{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 max-width:800px;
 margin:auto;
 }
 
+h1{
+margin-bottom:30px;
+}
+
 .question{
 font-weight:bold;
-margin-top:20px;
+margin-top:25px;
+font-size:18px;
+}
+
+.answer{
+margin-top:10px;
 }
 
 pre{
-background:white;
-color:black;
-padding:0;
-margin:5px 0 0 0;
-border:none;
+background:#1e1e1e;
+color:white;   /* changed from green to white */
+padding:15px;
+border-radius:8px;
+overflow-x:auto;
 }
 
 code{
@@ -43,14 +55,16 @@ font-family: Consolas, monospace;
 
 <div class="container">
 
-<h2>DSA Questions</h2>
+<h1>DSA Questions</h1>
 
 
 <div class="question">
 1. Two Sum — O(n²)
 </div>
 
-<pre><code>let nums = [2,7,11,15]
+<div class="answer">
+<pre><code>
+let nums = [2,7,11,15]
 let target = 9
 
 for(let i=0; i&lt;nums.length; i++){
@@ -59,7 +73,9 @@ for(let i=0; i&lt;nums.length; i++){
             console.log(i, j)
         }
     }
-}</code></pre>
+}
+</code></pre>
+</div>
 
 
 
@@ -67,7 +83,9 @@ for(let i=0; i&lt;nums.length; i++){
 2. Valid Parentheses — Stack
 </div>
 
-<pre><code>let str = "[{()}]"
+<div class="answer">
+<pre><code>
+let str = "[{()}]"
 let stack = []
 
 for(let i=0; i&lt;str.length; i++){
@@ -97,37 +115,10 @@ for(let i=0; i&lt;str.length; i++){
 if(stack.length == 0)
     console.log("Valid")
 else
-    console.log("Invalid")</code></pre>
-
-
-
-<div class="question">
-3. Longest Substring Without Repeating Characters — O(n)
+    console.log("Invalid")
+</code></pre>
 </div>
 
-<pre><code>let str = "abcabcbb"
-
-let set = new Set()
-
-let max = 0
-let left = 0
-
-for(let right = 0; right &lt; str.length; right++){
-
-    while(set.has(str[right])){
-
-        set.delete(str[left])
-        left++
-
-    }
-
-    set.add(str[right])
-
-    max = Math.max(max, right - left + 1)
-
-}
-
-console.log(max)</code></pre>
 
 
 
