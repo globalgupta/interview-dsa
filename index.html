@@ -17,16 +17,34 @@ background:white;
 padding:30px;
 border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
+max-width:800px;
+margin:auto;
+}
+
+h1{
+margin-bottom:30px;
 }
 
 .question{
 font-weight:bold;
-margin-top:20px;
+margin-top:25px;
+font-size:18px;
 }
 
 .answer{
-margin-left:20px;
-color:gray;
+margin-top:10px;
+}
+
+pre{
+background:#1e1e1e;
+color:#00ff88;
+padding:15px;
+border-radius:8px;
+overflow-x:auto;
+}
+
+code{
+font-family: Consolas;
 }
 
 </style>
@@ -39,57 +57,79 @@ color:gray;
 
 <h1>DSA Questions</h1>
 
+
 <div class="question">
-1. Two Sum
+1. Two Sum (Brute Force) — O(n²)
 </div>
 
 <div class="answer">
-O(n<sup>2</sup>)
-  
+
+<pre><code>
 let nums = [2,7,11,15]
 let target = 9
-for(let i=0; i<nums.length; i++){
-    for(let j=i+1; j<nums.length; j++){
+
+for(let i=0; i&lt;nums.length; i++){
+
+    for(let j=i+1; j&lt;nums.length; j++){
+
         if(nums[i] + nums[j] === target){
+
             console.log(i, j)
+
         }
+
     }
+
 }
+</code></pre>
+
 </div>
 
 
 <div class="question">
-2. Valid Parentheses
+2. Valid Parentheses — Stack
 </div>
 
 <div class="answer">
-let str = "[{()}]";
+
+<pre><code>
+let str = "[{()}]"
 let stack = []
 
-for(let i=0; i<str.length; i++) {
+for(let i=0; i&lt;str.length; i++){
+
     let ch = str[i]
-    
-    if(ch == "[" || ch == "{" || ch == "(") {
+
+    if(ch == "[" || ch == "{" || ch == "("){
+
         stack.push(ch)
+
     }
-    else {
+    else{
+
         let last = stack.pop()
-        
+
         if(
-        (ch == "]" && last != "[") || 
-        (ch == "}" && last != "{") || 
+        (ch == "]" && last != "[") ||
+        (ch == "}" && last != "{") ||
         (ch == ")" && last != "(")
-        ) {
+        ){
+
             console.log("Invalid")
             return
+
         }
+
     }
+
 }
 
-if (stack.length == 0)
+if(stack.length == 0)
     console.log("Valid")
 else
     console.log("Invalid")
+</code></pre>
+
 </div>
 
 
