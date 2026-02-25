@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>My Interview Questions</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f0f2f5;
+padding:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.question{
+font-weight:bold;
+margin-top:20px;
+}
+
+.answer{
+margin-left:20px;
+color:gray;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>DSA Questions</h1>
+
+<div class="question">
+1. Two Sum
+</div>
+
+<div class="answer">
+O(n<sup>2</sup>)
+  
+let nums = [2,7,11,15]
+let target = 9
+for(let i=0; i<nums.length; i++){
+    for(let j=i+1; j<nums.length; j++){
+        if(nums[i] + nums[j] === target){
+            console.log(i, j)
+        }
+    }
+}
+</div>
+
+
+<div class="question">
+2. Valid Parentheses
+</div>
+
+<div class="answer">
+let str = "[{()}]";
+let stack = []
+
+for(let i=0; i<str.length; i++) {
+    let ch = str[i]
+    
+    if(ch == "[" || ch == "{" || ch == "(") {
+        stack.push(ch)
+    }
+    else {
+        let last = stack.pop()
+        
+        if(
+        (ch == "]" && last != "[") || 
+        (ch == "}" && last != "{") || 
+        (ch == ")" && last != "(")
+        ) {
+            console.log("Invalid")
+            return
+        }
+    }
+}
+
+if (stack.length == 0)
+    console.log("Valid")
+else
+    console.log("Invalid")
+</div>
+
+
+</div>
+
+</body>
+
+</html>
