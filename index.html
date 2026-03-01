@@ -37,7 +37,7 @@ margin-top:10px;
 
 pre{
 background:#1e1e1e;
-color:white;   /* changed from green to white */
+color:white;
 padding:15px;
 border-radius:8px;
 overflow-x:auto;
@@ -78,7 +78,6 @@ for(let i=0; i&lt;nums.length; i++){
 </div>
 
 
-
 <div class="question">
 2. Valid Parentheses — Stack
 </div>
@@ -116,6 +115,29 @@ else
 </div>
 
 
+<div class="question">
+3. Char Frequency — Hashmap
+</div>
+
+<div class="answer">
+<pre><code>
+let str = "hello"
+let obj = {}
+
+for(let i=0; i&lt;str.length; i++) {
+    let ch = str[i]
+    
+    if(obj[ch]) {
+        obj[ch] = obj[ch] + 1
+    }
+    else {
+        obj[ch] = 1
+    }
+}
+
+console.log(obj)
+</code></pre>
+</div>
 
 
 </div>
