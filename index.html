@@ -140,6 +140,36 @@ console.log(obj)
 </div>
 
 
+<div class="question">
+4. Flatten Nested Array — Recursion
+</div>
+
+<div class="answer">
+<pre><code>
+let arr = [1, [2, [3, 4], 5]]
+
+function flattenArr(arr) {
+ let result = []
+
+ for(let i=0; i&lt;arr.length; i++) {
+    let val = arr[i]
+
+    if(Array.isArray(val)) {
+        result = result.concat(flattenArr(val))
+    }
+    else {
+        result.push(val)
+    }
+ }
+
+ return result
+}
+
+console.log(flattenArr(arr))
+</code></pre>
+</div>
+
+
 </div>
 
 </body>
