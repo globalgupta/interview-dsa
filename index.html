@@ -167,6 +167,36 @@ function flattenArr(arr) {
 
 console.log(flattenArr(arr))
 </code></pre>
+
+
+<div class="question">
+5. Print 1 to 10 with 1s Delay (setInterval & setTimeout)
+</div>
+
+<div class="answer">
+<pre><code>
+// Using setInterval
+let i = 1;
+
+let interval = setInterval(()=> {
+    console.log(i)
+    i++
+    
+    if(i > 10) {
+        clearInterval(interval)
+    }
+}, 1000)
+
+
+// Using setTimeout + closure
+for(let i=1; i<=10; i++) {
+    (function(x) {
+        setTimeout(()=> {
+            console.log(x)
+        }, x*1000)
+    })(i)
+}
+</code></pre>
 </div>
 
 
