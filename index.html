@@ -167,10 +167,11 @@ function flattenArr(arr) {
 
 console.log(flattenArr(arr))
 </code></pre>
+</div>
 
 
 <div class="question">
-5. Print 1 to 10 with 1s Delay (setInterval & setTimeout)
+5. Print 1 to 10 with 1s Delay
 </div>
 
 <div class="answer">
@@ -196,6 +197,33 @@ for(let i=1; i<=10; i++) {
         }, x*1000)
     })(i)
 }
+</code></pre>
+</div>
+
+
+<div class="question">
+6. Second Highest in Array — O(n)
+</div>
+
+<div class="answer">
+<pre><code>
+let arr = [5, 8, 9, 11, 4, 2, 1, 15, 13]
+
+let first = 0
+let second = 0
+
+for(let i=0; i&lt;arr.length; i++) {
+  if(arr[i] > first) {
+    second = first
+    first = arr[i]
+  }
+
+  if(arr[i] > second && arr[i] !== first) {
+    second = arr[i]
+  }
+}
+
+console.log(first, second)
 </code></pre>
 </div>
 
