@@ -67,8 +67,8 @@ font-family: Consolas, monospace;
 let nums = [2,7,11,15]
 let target = 9
 
-for(let i=0; i&lt;nums.length; i++){
-    for(let j=i+1; j&lt;nums.length; j++){
+for(let i=0; i<nums.length; i++){
+    for(let j=i+1; j<nums.length; j++){
         if(nums[i] + nums[j] === target){
             console.log(i, j)
         }
@@ -87,7 +87,7 @@ for(let i=0; i&lt;nums.length; i++){
 let str = "[{()}]"
 let stack = []
 
-for(let i=0; i&lt;str.length; i++){
+for(let i=0; i<str.length; i++){
     let ch = str[i]
 
     if(ch == "[" || ch == "{" || ch == "("){
@@ -124,7 +124,7 @@ else
 let str = "hello"
 let obj = {}
 
-for(let i=0; i&lt;str.length; i++) {
+for(let i=0; i<str.length; i++) {
     let ch = str[i]
     
     if(obj[ch]) {
@@ -151,7 +151,7 @@ let arr = [1, [2, [3, 4], 5]]
 function flattenArr(arr) {
  let result = []
 
- for(let i=0; i&lt;arr.length; i++) {
+ for(let i=0; i<arr.length; i++) {
     let val = arr[i]
 
     if(Array.isArray(val)) {
@@ -212,7 +212,7 @@ let arr = [5, 8, 9, 11, 4, 2, 1, 15, 13]
 let first = 0
 let second = 0
 
-for(let i=0; i&lt;arr.length; i++) {
+for(let i=0; i<arr.length; i++) {
   if(arr[i] > first) {
     second = first
     first = arr[i]
@@ -224,6 +224,43 @@ for(let i=0; i&lt;arr.length; i++) {
 }
 
 console.log(first, second)
+</code></pre>
+</div>
+
+
+<div class="question">
+7. Longest Substring Without Repeating Characters — O(n²)
+</div>
+
+<div class="answer">
+<pre><code>
+function test(str) {
+    let maxLength = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        let chars = {};
+        let length = 0;
+
+        for (let j = i; j < str.length; j++) {
+            let currentChar = str[j];
+
+            if (chars[currentChar]) {
+                break;
+            }
+
+            chars[currentChar] = true;
+            length++;
+        }
+
+        if(length > maxLength) {
+            maxLength = length
+        }
+    }
+
+    return maxLength;
+}
+
+console.log(test("pwwkew")); // 3
 </code></pre>
 </div>
 
