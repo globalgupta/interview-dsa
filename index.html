@@ -285,6 +285,26 @@ for(let i = 0; i <= str.length - substr.length; i++) {
 console.log(found)
 </code></pre>
 </div>
+<div class="question">
+9. Missing Number in Array
+</div>
+
+<div class="answer">
+<pre><code>
+let arr = [6,5,4,1,2]
+
+let n = arr.length + 1
+let sum = 0
+
+let expectsum = (n * (n + 1)) / 2
+
+for(let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i]
+}
+
+console.log(expectsum - sum)
+</code></pre>
+</div>
     
 </div>
 
